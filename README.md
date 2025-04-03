@@ -16,4 +16,4 @@ if __name__ == "__main__":
     dest_lang = input().strip()
     
     translated_text = translate_text(text, src_lang, dest_lang)
-    print(f"Translated Text: {translated_text}")
+    print(f"Translated Text: {translated_text}") 
