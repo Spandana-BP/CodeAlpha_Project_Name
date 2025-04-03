@@ -4,7 +4,7 @@
     <div class="container">
         <h1>Google Translate Tool</h1>
         
-        <textarea id="inputText" placeholder="Enter your sentence..."></textarea>
+        <textarea id="inputText" placeholder="Enter your sentence..."> </textarea>
         <br>
         
         <label><b>This is in:</b></label>
