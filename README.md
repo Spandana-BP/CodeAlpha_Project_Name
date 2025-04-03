@@ -1,5 +1,5 @@
-# CodeAlpha_Project_Name
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,29 +51,31 @@
         <button onclick="translateText()">Translate</button>
         <h2>Translated Text:</h2>
         <p id="outputText"></p>
-    </div><script>
-    async function translateText() {
-        const text = document.getElementById("inputText").value;
-        const targetLang = document.getElementById("targetLanguage").value;
-        const apiKey = 'YOUR_GOOGLE_TRANSLATE_API_KEY';
-        
-        const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-        
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                q: text,
-                target: targetLang
-            })
-        });
-        
-        const data = await response.json();
-        document.getElementById("outputText").innerText = data.data.translations[0].translatedText;
-    }
-</script>
+    </div>
+    
+    <script>
+        async function translateText() {
+            const text = document.getElementById("inputText").value;
+            const targetLang = document.getElementById("targetLanguage").value;
+            const apiKey = 'YOUR_GOOGLE_TRANSLATE_API_KEY'; // Replace with your actual API key
+            
+            const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+            
+            const response = await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ q: text, target: targetLang, format: "text" })
+            });
 
+            if (!response.ok) {
+                document.getElementById("outputText").innerText = "Error: Unable to translate.";
+                return;
+            }
+
+            const data = await response.json();
+            document.getElementById("outputText").innerText = data.data.translations[0].translatedText;
+        }
+    </script>
 </body>
 </html>
+
