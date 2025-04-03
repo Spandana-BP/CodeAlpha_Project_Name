@@ -5,22 +5,7 @@
         <h1>Translate Tool</h1>
 
 
-   # Import the following module
-import tkinter as tk  # install Tkinter
-from tkinter import *
-from tkinter import ttk
-from PIL import ImageTk, Image  # install pillow
-from googletrans import Translator  # install googletrans==3.1.0a0 , newer versions may or may not work
-from tkinter import messagebox
-import pyperclip as pc # install paperclip for copy function
-from gtts import gTTS  # install gTTS for text to speech, speech to text functionality
-import os
-import speech_recognition as spr # install speech recognition for speech to text functionality
-
-# ---------------------------------------------------Language Translator--------------------------------------------------------------
-''' This python file consist of all functionalities required for the language translator application to work  '''
-
-# UI is developed using Tkinter library
+   
 root = tk.Tk()
 root.title('Langauge Translator')
 root.geometry('1060x660')
