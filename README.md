@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Google Translate Tool</title>
+    <title><h1>Google Translate Tool</h1></title>
     
 </head>
 <body>
